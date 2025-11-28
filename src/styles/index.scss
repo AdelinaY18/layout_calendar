@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .container {
@@ -24,17 +24,16 @@ body {
   flex-wrap: wrap;
   gap: $gap-size;
 
-  &__days {
-    width: $cell-size;
-    height: $cell-size;
+  &__day {
+    align-items: center;
     background: $bg-color;
     border: $border-size solid black;
-    position: relative;
-
     display: flex;
+    height: $cell-size;
     justify-content: center;
-    align-items: center;
+    position: relative;
     transition: all 0.5s ease;
+    width: $cell-size;
 
     &:hover {
       cursor: pointer;
@@ -47,13 +46,16 @@ body {
         content: '#{$i}';
         font-size: 30px;
         position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
 
   @for $m from 28 through 31 {
     &--month-length-#{$m} {
-      .calendar__days:nth-child(n + #{$m + 1}) {
+      .calendar__day:nth-child(n + #{$m + 1}) {
         display: none;
       }
     }
@@ -63,7 +65,7 @@ body {
 
   @each $name, $shift in $start-days {
     &--start-day-#{$name} {
-      .calendar__days:first-child {
+      .calendar__day:first-child {
         margin-left: calc((#{$cell-size} + #{$border-size * 2} + #{$gap-size}) * #{$shift});
       }
     }
