@@ -60,7 +60,7 @@ body {
     }
   }
 
-  $start-days: (sun 6, mon 0, tue 1, wed 2, thu 3, fri 4, sat 5);
+  $start-days: (fri 4, mon 0, sun 6, thu 3, tue 1, sat 5, wed 2);
 
   @each $name, $shift in $start-days {
     &--start-day-#{$name} {

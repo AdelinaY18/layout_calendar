@@ -9,4 +9,3 @@ $cells-width: $days-in-week * $cell-size;
 $gaps-width: ($days-in-week - 1) * $gap-size;
 $padding-total: $padding-size * 2;
 $calendar-width: $cells-width + $gaps-width + $padding-total;
-
